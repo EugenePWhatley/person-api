@@ -1,0 +1,8 @@
+version: '3'
+services:
+  person:
+    build: .
+    image: "ewhatley/person-api:latest"
+    container_name: "person-api"
+    ports:
+      - "8080:8080"
