@@ -40,7 +40,8 @@ public class PersonService {
 
     public Person update(UUID id, PersonMessage personMessage) {
         Person person = remove(id);
-        persons.add(new Person(id, personMessage.getName(), person.getBirthday()));
-        return get(id);
+        Person updatedPerson = new Person(id, personMessage.getName(), person.getBirthday());
+        persons.add(updatedPerson);
+        return updatedPerson;
     }
 }
