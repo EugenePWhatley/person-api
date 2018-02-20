@@ -41,6 +41,6 @@ public class PersonService {
     public Person update(UUID id, PersonMessage personMessage) {
         Person person = remove(id);
         persons.add(new Person(id, personMessage.getName(), person.getBirthday()));
-        return person;
+        return get(id);
     }
 }
