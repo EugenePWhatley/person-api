@@ -1,10 +1,12 @@
 package hello.Model;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
 import java.util.UUID;
 
+@Immutable
 public class Person {
 
-    private UUID id;
+    private final UUID id;
     private final Name name;
     private final Birthday birthday;
 
