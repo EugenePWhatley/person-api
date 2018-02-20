@@ -82,11 +82,6 @@ REQUEST BODY:
 	"name": { 
 		"first": String, 
 		"last": String 
-	}, 
-	"birthday": { 
-		"month": Integer,
-		"day": Interger, 
-		"year": Integer 
 	}
 }
 ```
