@@ -17,4 +17,12 @@ public class Name {
     public String getLast() {
         return last;
     }
+
+    @Override
+    public String toString() {
+        return "Name{" +
+                "first='" + first + '\'' +
+                ", last='" + last + '\'' +
+                '}';
+    }
 }

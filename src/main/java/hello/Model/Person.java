@@ -8,9 +8,10 @@ public class Person {
 
     private final UUID id;
     private final Name name;
-    private final Birthday birthday;
 
-    public Person(UUID id, Name name, Birthday birthday) {
+    private final Date birthday;
+
+    public Person(UUID id, Name name, Date birthday) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -24,7 +25,25 @@ public class Person {
         return name;
     }
 
-    public Birthday getBirthday() {
+    public Date getBirthday() {
         return birthday;
+    }
+
+    public Person older(Person person) {
+        Date currentBirthday = this.getBirthday();
+        Date comparedBirthday = person.getBirthday();
+        if (currentBirthday.max(comparedBirthday) == comparedBirthday) {
+            return person;
+        }
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name=" + name +
+                ", birthday=" + birthday +
+                '}';
     }
 }

@@ -1,6 +1,6 @@
 package hello.Message;
 
-public class BirthdayMessage {
+public class DateMessage {
     private Integer year;
     private Integer day;
     private Integer month;
