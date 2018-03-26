@@ -9,9 +9,9 @@ public class Person {
     private final UUID id;
     private final Name name;
 
-    private final Date birthday;
+    private final Birthday birthday;
 
-    public Person(UUID id, Name name, Date birthday) {
+    public Person(UUID id, Name name, Birthday birthday) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -25,13 +25,13 @@ public class Person {
         return name;
     }
 
-    public Date getBirthday() {
+    public Birthday getBirthday() {
         return birthday;
     }
 
     public Person older(Person person) {
-        Date currentBirthday = this.getBirthday();
-        Date comparedBirthday = person.getBirthday();
+        Birthday currentBirthday = this.getBirthday();
+        Birthday comparedBirthday = person.getBirthday();
         if (currentBirthday.later(comparedBirthday) == comparedBirthday) {
             return person;
         }

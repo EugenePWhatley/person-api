@@ -1,14 +1,12 @@
 package hello.Message;
 
+import hello.Model.Name;
+
 public class NameMessage {
     private String first;
     private String last;
 
-    public String getFirst() {
-        return first;
-    }
-
-    public String getLast() {
-        return last;
+    public Name getName() {
+        return new Name(first, last);
     }
 }

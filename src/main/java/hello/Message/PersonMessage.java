@@ -1,19 +1,18 @@
 package hello.Message;
 
-import hello.Model.Date;
+import hello.Model.Birthday;
 import hello.Model.Name;
 
 public class PersonMessage {
 
     private NameMessage name;
-    private DateMessage birthday;
+    private BirthdayMessage birthday;
 
     public Name getName() {
-        return new Name(name.getFirst(), name.getLast());
+        return name.getName();
     }
 
-    public Date getBirthday() {
-        return new Date(birthday.getMonth(), birthday.getDay(), birthday.getYear());
+    public Birthday getBirthday() {
+        return birthday.getBirthday();
     }
-
 }
