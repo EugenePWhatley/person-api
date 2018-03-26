@@ -3,7 +3,7 @@ package hello.Model;
 import org.joda.time.DateTime;
 import org.joda.time.IllegalFieldValueException;
 
-public class Birthday extends Date{
+public class Birthday extends Date {
     public Birthday(Integer month, Integer day, Integer year) {
         super(month, day, year);
         try {

@@ -2,7 +2,6 @@ package hello.Util;
 
 import hello.Builders.PersonTestBuilder;
 import hello.Model.Birthday;
-import hello.Model.Date;
 import hello.Model.Person;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -10,7 +9,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class SorterTest {
 

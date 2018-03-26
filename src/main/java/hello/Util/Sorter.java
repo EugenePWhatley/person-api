@@ -2,7 +2,8 @@ package hello.Util;
 
 import hello.Model.Person;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
 
 public class Sorter {
 
