@@ -44,4 +44,11 @@ public class DateTest {
 
         assertThat(earlier.equals(later), is(true));
     }
+
+    @Test
+    public void shouldPrettyPrintDate() {
+        String output = new Date(6, 18, 1993).toString();
+
+        assertThat(output, is("6-18-1993"));
+    }
 }
