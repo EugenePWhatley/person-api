@@ -17,8 +17,7 @@ public class Date {
 
     private void validate(Integer month, Integer day, Integer year) {
         try {
-            if (new DateTime(year, month, day, 0, 0).isAfterNow())
-                throw new IllegalArgumentException("Birthday must be in past");
+            new DateTime(year, month, day, 0, 0);
         } catch (IllegalFieldValueException exception) {
             throw new IllegalArgumentException(exception.getMessage());
         }

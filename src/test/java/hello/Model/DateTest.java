@@ -7,6 +7,11 @@ import static org.junit.Assert.assertThat;
 
 public class DateTest {
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumentExceptionWhenCreaingInvalidDate() {
+        new Date(12, 74, 1993);
+    }
+
     @Test
     public void shouldReturnLatestMonth() {
         Date earlier = new Date(1, 30, 1990);
