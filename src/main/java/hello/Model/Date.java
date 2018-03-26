@@ -60,6 +60,26 @@ public class Date {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Date date = (Date) o;
+
+        if (month != null ? !month.equals(date.month) : date.month != null) return false;
+        if (day != null ? !day.equals(date.day) : date.day != null) return false;
+        return year != null ? year.equals(date.year) : date.year == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = month != null ? month.hashCode() : 0;
+        result = 31 * result + (day != null ? day.hashCode() : 0);
+        result = 31 * result + (year != null ? year.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Date{" +
                 "month=" + month +

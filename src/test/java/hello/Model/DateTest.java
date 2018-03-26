@@ -36,4 +36,12 @@ public class DateTest {
 
         assertThat(actual, is(later));
     }
+
+    @Test
+    public void shouldConsiderDatesSameIfSameYearDayAndMonth() {
+        Date earlier = new Date(1, 1, 1990);
+        Date later = new Date(1, 1, 1990);
+
+        assertThat(earlier.equals(later), is(true));
+    }
 }
