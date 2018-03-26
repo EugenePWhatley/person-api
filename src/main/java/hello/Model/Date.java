@@ -24,28 +24,40 @@ public class Date {
         }
     }
 
-    public int getMonth() {
+    public Integer getMonth() {
         return month;
     }
 
-    public int getDay() {
+    public Integer getDay() {
         return day;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public Date max(Date date) {
-        if (date.getMonth() > this.getMonth())
+    public Date later(Date date) {
+        int later = this.compareTo(date);
+        if (later == 1) {
+            return this;
+        } else {
             return date;
-        if (date.getYear() > this.getYear())
-            return date;
-        if (date.getDay() > this.getDay())
-            return date;
-        return this;
+        }
     }
 
+    private int compareTo(Date date) {
+        int laterYear = this.getYear().compareTo(date.getYear());
+        int laterMonth = this.getMonth().compareTo(date.getMonth());
+        int laterDay = this.getDay().compareTo(date.getDay());
+
+        if (laterYear == 1 || laterYear == 0 && laterMonth == 1 || laterYear == 0 && laterMonth == 0 && laterDay == 1) {
+            return 1;
+        } else if (laterYear == 0 && laterMonth == 0 && laterDay == 0) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
 
     @Override
     public String toString() {

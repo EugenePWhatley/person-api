@@ -32,7 +32,7 @@ public class Person {
     public Person older(Person person) {
         Date currentBirthday = this.getBirthday();
         Date comparedBirthday = person.getBirthday();
-        if (currentBirthday.max(comparedBirthday) == comparedBirthday) {
+        if (currentBirthday.later(comparedBirthday) == comparedBirthday) {
             return person;
         }
         return this;

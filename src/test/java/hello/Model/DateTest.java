@@ -1,30 +1,30 @@
 package hello.Model;
 
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 public class DateTest {
 
     @Test
     public void shouldReturnLatestMonth() {
-        Date earlier = new Date(1, 1, 1990);
+        Date earlier = new Date(1, 30, 1990);
         Date later = new Date(2, 1, 1990);
 
-        Date actual = earlier.max(later);
+        Date actual = earlier.later(later);
 
-        assertThat(actual, Matchers.is(later));
+        assertThat(actual, is(later));
     }
 
     @Test
     public void shouldReturnLatestYear() {
-        Date earlier = new Date(1, 1, 1990);
-        Date later = new Date(1, 1, 1992);
+        Date earlier = new Date(5, 23, 1990);
+        Date later = new Date(3, 1, 1992);
 
-        Date actual = earlier.max(later);
+        Date actual = later.later(earlier);
 
-        assertThat(actual, Matchers.is(later));
+        assertThat(actual, is(later));
     }
 
     @Test
@@ -32,19 +32,8 @@ public class DateTest {
         Date earlier = new Date(1, 1, 1990);
         Date later = new Date(1, 3, 1990);
 
-        Date actual = earlier.max(later);
+        Date actual = earlier.later(later);
 
-        assertThat(actual, Matchers.is(later));
+        assertThat(actual, is(later));
     }
-
-    @Test
-    public void shouldReturnLatestBirthday() {
-        Date earlier = new Date(4, 20, 1990);
-        Date later = new Date(1, 3, 1992);
-
-        Date actual = earlier.max(later);
-
-        assertThat(actual, Matchers.is(later));
-    }
-
 }
