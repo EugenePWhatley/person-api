@@ -1,8 +1,10 @@
 package hello.Model;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
 import org.joda.time.DateTime;
 import org.joda.time.IllegalFieldValueException;
 
+@Immutable
 public class Date {
     private final Integer month;
     private final Integer day;

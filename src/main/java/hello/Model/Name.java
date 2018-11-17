@@ -1,5 +1,8 @@
 package hello.Model;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
+
+@Immutable
 public class Name {
 
     private final String first;
